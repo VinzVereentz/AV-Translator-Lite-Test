@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909"><link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/logo.png"><title>AV Translator</title><link rel="stylesheet" href="style.css">
+</head><body>
+<header><div class="brand"><img src="assets/logo.png"><div><b>AV Translator</b><small>日本語 → Indonesia</small></div></div><button id="install" hidden>Install</button></header>
+<main>
+<section class="hero"><span>ON-DEVICE TRANSLATOR</span><h1>Jepang <i>→</i> Indonesia</h1><p>Terjemahkan subtitle langsung di browser tanpa API key. Model AI berjalan di perangkat Anda.</p></section>
+<section class="card"><div class="head"><div><h2>Subtitle Jepang</h2><small>SRT / VTT / ASS / SSA / TXT</small></div><label class="red">Pilih File<input id="file" type="file" accept=".srt,.vtt,.ass,.ssa,.txt"></label></div>
+<textarea id="src" placeholder="Atau tempel subtitle Jepang di sini..."></textarea>
+<div class="bar"><button id="example">Contoh</button><em id="filename">Belum ada file</em></div></section>
+<section class="card"><h2>Terjemahan</h2><p class="small">Model NLLB-200 quantized menerjemahkan Jepang ke Indonesia langsung di perangkat. WebGPU digunakan otomatis jika tersedia.</p>
+<div class="progress"><div id="progress"></div></div><div id="status">Model belum dimuat.</div>
+<button id="translate" class="primary">Muat Model & Terjemahkan</button></section>
+<section class="card"><div class="head"><div><h2>Hasil Indonesia</h2><small>Timestamp dipertahankan</small></div><button id="download" disabled>Download SRT</button></div>
+<textarea id="out" readonly placeholder="Hasil terjemahan muncul di sini..."></textarea><div class="bar"><button id="copy">Salin</button><button id="clear">Bersihkan</button></div></section>
+<div class="note">⚡ Mode Lite: model quantized + pemrosesan per bagian untuk menghemat RAM. HP yang mendukung WebGPU biasanya lebih cepat. Unduhan model tetap besar karena model Jepang→Indonesia yang benar-benar kecil dan berkualitas tinggi untuk browser masih terbatas.</div>
+</main><footer>AV Translator • Tanpa API Key</footer>
+<script type="module" src="app.js"></script></body></html>
